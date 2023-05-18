@@ -4,7 +4,7 @@ require("dotenv").config();
 const connectDb = async () => {
  try{
    const connect = await mongoose.connect(
-    process.env.CONNECTION_STRING,
+    "mongodb://localhost:27017/heritage",
     {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
