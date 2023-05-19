@@ -12,7 +12,13 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+ origin: ["https://superb-marzipan-11b5f3.netlify.app"],
+ methods: ["GET", "POST", "DELETE"],
+ credentials: true,
+ origin: true,
+ })
+);
 
 app.use(express.json());
 app.use("/api/sites", require ("./routes/siteRoutes"));

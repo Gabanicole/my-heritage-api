@@ -7,6 +7,7 @@ const {
   userRegister,
   serializeUser
 } = require("../controllers/userController");
+const cors = require('cors');
 
 // Users Registeration Route
 router.post("/register-user", async (req, res) => {
