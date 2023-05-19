@@ -2,6 +2,7 @@ const express = require("express");
 const errorHandler = require("./middleware/errorHandler");
 const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
+const cors = require('cors');
 
 
 
@@ -9,6 +10,9 @@ connectDb();
 const app = express();
 
 const port = process.env.PORT || 5000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.use(express.json());
 app.use("/api/sites", require ("./routes/siteRoutes"));
